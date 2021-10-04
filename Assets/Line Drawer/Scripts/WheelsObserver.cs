@@ -6,7 +6,6 @@ public class WheelsObserver : MonoBehaviour
 {
     [SerializeField] internal List<WheelsMaterialController> Wheels = new List<WheelsMaterialController>();
 
-    private int _wheelsAmountForFreeze = 2;
     private Rigidbody2D _rb;
 
     private void Awake()

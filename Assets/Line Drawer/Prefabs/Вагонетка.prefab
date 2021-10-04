@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8577231966734806965}
   m_Layer: 6
   m_Name: Collider 1 (4)
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 7817356831950072585}
   m_Layer: 6
   m_Name: Collider 1 (5)
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 25317550823336083}
   m_Layer: 6
   m_Name: Collider 1 (2)
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 1852657625847783754}
   m_Layer: 7
   m_Name: "\u0412\u0430\u0433\u043E\u043D\u0435\u0442\u043A\u0430"
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1728528815643347736}
   m_Layer: 6
   m_Name: Collider 1 (1)
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 5782583263813024968}
   m_Layer: 6
   m_Name: Collider 1
-  m_TagString: Untagged
+  m_TagString: Wagon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

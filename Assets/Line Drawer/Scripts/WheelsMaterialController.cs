@@ -5,7 +5,7 @@ using UnityEngine;
 public class WheelsMaterialController : MonoBehaviour
 {
     [SerializeField] internal WheelsObserver WheelsObserver;
-    private bool _isFreezeLineContacted = false;
+    internal bool IsFreezeLineContacted = false;
 
     internal Rigidbody2D Rb { get; private set; }
 
@@ -17,27 +17,17 @@ public class WheelsMaterialController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Freezing Line" && !_isFreezeLineContacted)
+        if (collision.gameObject.tag == "Freezing Line" && !IsFreezeLineContacted)
         {
-            _isFreezeLineContacted = true;
-            WheelsObserver?.Wheels.Add(this);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Freezing Line" && _isFreezeLineContacted)
-        {
-            _isFreezeLineContacted = false;
-            WheelsObserver?.Wheels.Remove(this);
+            IsFreezeLineContacted = true;
         }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Freezing Line" && _isFreezeLineContacted)
+        if (collision.gameObject.tag == "Freezing Line" && IsFreezeLineContacted)
         {
-            WheelsObserver.UpdatePhysicMaterial();
+            WheelsObserver.StopWheelsSpeed();
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WheelsObserver : MonoBehaviour
 {
-    internal List<WheelsMaterialController> Wheels = new List<WheelsMaterialController>();
+    [SerializeField] internal List<WheelsMaterialController> Wheels = new List<WheelsMaterialController>();
 
     private int _wheelsAmountForFreeze = 2;
     private Rigidbody2D _rb;
@@ -14,15 +14,39 @@ public class WheelsObserver : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    internal void UpdatePhysicMaterial()
+    internal void StopWheelsSpeed(bool force = false)
     {
-        if (Wheels.Count == _wheelsAmountForFreeze)
+        foreach (var wheel in Wheels)
         {
-            foreach (var wheel in Wheels)
-            {
-                wheel.Rb.velocity = new Vector2(0, wheel.Rb.velocity.y);
-            }
-            _rb.velocity = new Vector2(0, _rb.velocity.y);
+            if (wheel.IsFreezeLineContacted == false && !force)
+                return;
         }
+
+        foreach (var wheel in Wheels)
+        {
+            wheel.Rb.velocity = new Vector2(0, wheel.Rb.velocity.y);
+            wheel.IsFreezeLineContacted = false;
+        }
+        _rb.velocity = new Vector2(0, _rb.velocity.y);
+    }
+
+    internal void Freeze()
+    {
+        foreach (var wheel in Wheels)
+        {
+            wheel.Rb.velocity = new Vector2(0, 0);
+            wheel.Rb.isKinematic = true;
+        }
+        _rb.velocity = new Vector2(0, 0);
+        _rb.isKinematic = true;
+    }
+
+    internal void UnFreeze()
+    {
+        foreach (var wheel in Wheels)
+        {
+            wheel.Rb.isKinematic = false;
+        }
+        _rb.isKinematic = false;
     }
 }

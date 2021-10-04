@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class LinesDrawer : MonoBehaviour {
 
 	internal static LinesDrawer Instance;
 
-	public GameObject linePrefab;
 	public LayerMask cantDrawOverLayer;
 	int cantDrawOverLayerIndex;
+	
+	internal GameObject LinePrefab;
 
 	[Space ( 30f )]
-	public Gradient lineColor;
 	public float linePointsMinDistance;
 	public float lineWidth;
 
@@ -39,6 +40,7 @@ public class LinesDrawer : MonoBehaviour {
 	}
 
 	void Update ( ) {
+
 		if ( Input.GetMouseButtonDown ( 0 ) && !IsMovingObject)
 			BeginDraw ( );
 
@@ -51,11 +53,11 @@ public class LinesDrawer : MonoBehaviour {
 
 	// Begin Draw ----------------------------------------------
 	void BeginDraw ( ) {
-		currentLine = Instantiate ( linePrefab, this.transform ).GetComponent <Line> ( );
+		currentLine = Instantiate ( LinePrefab, this.transform ).GetComponent <Line> ( );
 
 		//Set line properties
 		currentLine.UsePhysics ( false );
-		currentLine.SetLineColor ( lineColor );
+		//currentLine.SetLineColor ( lineColor );
 		currentLine.SetPointsMinDistance ( linePointsMinDistance );
 		currentLine.SetLineWidth ( lineWidth );
 

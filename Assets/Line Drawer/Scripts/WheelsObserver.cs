@@ -34,10 +34,12 @@ public class WheelsObserver : MonoBehaviour
     {
         foreach (var wheel in Wheels)
         {
-            wheel.Rb.velocity = new Vector2(0, 0);
+            wheel.Rb.velocity = Vector2.zero;
+            wheel.Rb.angularVelocity = 0;
             wheel.Rb.isKinematic = true;
         }
-        _rb.velocity = new Vector2(0, 0);
+        _rb.velocity = Vector2.zero;
+        _rb.angularVelocity = 0;
         _rb.isKinematic = true;
     }
 

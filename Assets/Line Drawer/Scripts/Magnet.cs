@@ -6,16 +6,11 @@ public class Magnet : MonoBehaviour
 {
     [SerializeField] [Range(0, 50)] private float _forceAttraction;
 
-    private CircleCollider2D _magnetField;
     private List<Rigidbody2D> _objectsInField = new List<Rigidbody2D>();
     private bool _isStopMagniting = false;
     private bool _isFreezeObject = false;
 
 
-    private void Awake()
-    {
-        _magnetField = GetComponent<CircleCollider2D>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,7 +81,7 @@ public class Magnet : MonoBehaviour
         _isFreezeObject = false;
     }
 
-    IEnumerator StopMagniting()
+    IEnumerator StopMagneting()
     {
         _isStopMagniting = true;
         yield return new WaitForSeconds(1);

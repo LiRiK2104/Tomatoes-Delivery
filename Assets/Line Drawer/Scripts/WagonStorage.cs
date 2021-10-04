@@ -34,7 +34,7 @@ public class WagonStorage : MonoBehaviour
     {
         if (UIManager.Instance != null)
         {
-            UIManager.Instance.ChangeQuantity(_inStorage);
+            UIManager.Instance.ChangeTomatoesAmount(_inStorage);
         }
     }
 }

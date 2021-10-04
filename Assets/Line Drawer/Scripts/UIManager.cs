@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    internal void ChangeQuantity(int currentTomatoesQuantity)
+    internal void ChangeTomatoesAmount(int currentTomatoesQuantity)
     {
         if (TomatoSpawner.Instance != null)
         {

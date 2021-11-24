@@ -82,7 +82,7 @@ public class LinesDrawer : MonoBehaviour {
 				Destroy ( currentLine.gameObject );
 			} else {
 				//Add the line to "CantDrawOver" layer
-				currentLine.gameObject.layer = cantDrawOverLayerIndex;
+				//currentLine.gameObject.layer = cantDrawOverLayerIndex;
 
 				//Activate Physics on the line
 				currentLine.UsePhysics ( false );

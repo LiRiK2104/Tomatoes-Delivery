@@ -1376,6 +1376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _togglesSwitcher: {fileID: 1816075506}
   _showHideObject: {fileID: 1025691822}
+  _order: 1
   _linePrefab: {fileID: 8099593656137502299, guid: c6b89bcbf084b664aa9d699883a6dfdf, type: 3}
 --- !u!58 &783801066
 CircleCollider2D:
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   cantDrawOverLayer:
     serializedVersion: 2
     m_Bits: 256
+  LinePrefab: {fileID: 0}
   linePointsMinDistance: 0.1
   lineWidth: 0.1
 --- !u!4 &1132908940
@@ -3226,6 +3228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _togglesSwitcher: {fileID: 1816075506}
   _showHideObject: {fileID: 238902695}
+  _order: 0
   _linePrefab: {fileID: 1576317030557830, guid: d489242030c18584caa5c64bba0a6082, type: 3}
 --- !u!58 &2028625084
 CircleCollider2D:

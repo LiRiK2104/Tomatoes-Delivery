@@ -40,6 +40,7 @@ public class TomatoSpawner : MonoBehaviour
         
         while (spawned < TomatoesQuantity)
         {
+            AudioManager.Instance.PlaySound(SoundFX.tomatoSpawn);
             Instantiate(_tomatoRef, transform.position, Quaternion.identity, gameObject.transform);
             spawned++;
             yield return new WaitForSeconds(_spawnInterval);

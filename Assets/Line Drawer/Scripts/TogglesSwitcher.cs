@@ -7,10 +7,10 @@ public class TogglesSwitcher : MonoBehaviour
 {
     internal List<ToggleItem> Toggles = new List<ToggleItem>();
 
-    private void Start()
+   /* private void Start()
     {
         SwitchToggle(Toggles[0]);
-    }
+    }*/
 
     internal void SwitchToggle(ToggleItem toggleItem)
     {

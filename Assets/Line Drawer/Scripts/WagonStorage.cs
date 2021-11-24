@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WagonStorage : MonoBehaviour
 {
-    private int _inStorage = 0;
 
 
     private void Start()
@@ -14,18 +13,28 @@ public class WagonStorage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Tomato")
+        if (collision.tag == "Tomato" && !UIManager.Instance.tomatoes.Contains(collision.gameObject))
         {
-            _inStorage++;
+            UIManager.Instance.tomatoes.Add(collision.gameObject);
+            if (LoadNextScene.Instance.index == 3)
+            {
+                LoadNextScene.Instance.deliveredTomatoes++;
+                Debug.Log(LoadNextScene.Instance.deliveredTomatoes);
+            }
             ChangeQuantityInUI();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Tomato")
+        if (collision.tag == "Tomato" && UIManager.Instance.tomatoes.Contains(collision.gameObject))
         {
-            _inStorage--;
+            UIManager.Instance.tomatoes.Remove(collision.gameObject);
+            if (LoadNextScene.Instance.index == 3)
+            {
+                LoadNextScene.Instance.deliveredTomatoes--;
+                Debug.Log(LoadNextScene.Instance.deliveredTomatoes);
+            }
             ChangeQuantityInUI();
         }
     }
@@ -34,7 +43,7 @@ public class WagonStorage : MonoBehaviour
     {
         if (UIManager.Instance != null)
         {
-            UIManager.Instance.ChangeTomatoesAmount(_inStorage);
+            UIManager.Instance.ChangeTomatoesAmount();
         }
     }
 }

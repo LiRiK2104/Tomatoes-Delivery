@@ -42,7 +42,7 @@ public class Magnet : MonoBehaviour
         {
             foreach (var item in _objectsInField)
             {
-                if (Vector2.Distance(transform.position, item.position) < 0.5f && !_isFreezeObject)
+                if (Vector2.Distance(transform.position, item.position) < 0.3f && !_isFreezeObject)
                 {
                     item.gameObject.GetComponent<WheelsObserver>().Freeze();
                     item.gameObject.transform.SetParent(transform);
@@ -59,6 +59,7 @@ public class Magnet : MonoBehaviour
 
     public void PushLeft()
     {
+        AudioManager.Instance.PlaySound(SoundFX.push);
         StartCoroutine("StopMagneting");
         foreach (var item in _objectsInField)
         {
@@ -71,6 +72,7 @@ public class Magnet : MonoBehaviour
 
     public void PushRight()
     {
+        AudioManager.Instance.PlaySound(SoundFX.push);
         StartCoroutine("StopMagneting");
         foreach (var item in _objectsInField)
         {
@@ -84,7 +86,7 @@ public class Magnet : MonoBehaviour
     IEnumerator StopMagneting()
     {
         _isStopMagniting = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         _isStopMagniting = false;
     }
 }

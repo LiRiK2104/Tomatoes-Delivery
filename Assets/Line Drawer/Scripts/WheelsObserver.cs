@@ -31,23 +31,25 @@ public class WheelsObserver : MonoBehaviour
 
     internal void Freeze()
     {
+        AudioManager.Instance.PlaySound(SoundFX.hold);
         foreach (var wheel in Wheels)
         {
+            Debug.Log("freezzee");
             wheel.Rb.velocity = Vector2.zero;
             wheel.Rb.angularVelocity = 0;
-            wheel.Rb.isKinematic = true;
+            //wheel.Rb.isKinematic = true;
         }
         _rb.velocity = Vector2.zero;
         _rb.angularVelocity = 0;
-        _rb.isKinematic = true;
+        //_rb.isKinematic = true;
     }
 
     internal void UnFreeze()
     {
         foreach (var wheel in Wheels)
         {
-            wheel.Rb.isKinematic = false;
+            //wheel.Rb.isKinematic = false;
         }
-        _rb.isKinematic = false;
+        //_rb.isKinematic = false;
     }
 }

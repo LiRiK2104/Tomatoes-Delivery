@@ -15,6 +15,7 @@ public class MovebleBlock : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + _posByCursor;
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
     private void OnMouseExit()

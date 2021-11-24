@@ -10,5 +10,6 @@ public class ToggleLines : ToggleItem
     protected override void Custom(bool value)
     {
         LinesDrawer.Instance.LinePrefab = _linePrefab;
+        AudioManager.Instance.PlayClick();
     }
 }

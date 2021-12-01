@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    private bool finished = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,10 +15,10 @@ public class Finish : MonoBehaviour
 
     private void FinishWagon()
     {
-        if (!finished)
+        if (!LoadNextScene.Instance.Finished)
         {
-            finished = true;
-            AudioManager.Instance.PlaySound(SoundFX.win);
+            LoadNextScene.Instance.Finished = true;
+            AudioManager.Instance?.PlaySound(SoundFX.win);
             Invoke("Finishh", 2);
         }
     }

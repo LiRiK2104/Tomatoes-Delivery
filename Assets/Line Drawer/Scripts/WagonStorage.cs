@@ -27,7 +27,9 @@ public class WagonStorage : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Tomato" && UIManager.Instance.tomatoes.Contains(collision.gameObject))
+        if (collision.tag == "Tomato" && 
+            UIManager.Instance.tomatoes.Contains(collision.gameObject) && 
+            !LoadNextScene.Instance.Finished)
         {
             UIManager.Instance.tomatoes.Remove(collision.gameObject);
             if (LoadNextScene.Instance.index == 3)

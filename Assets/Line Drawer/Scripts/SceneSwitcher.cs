@@ -7,7 +7,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void Restart()
     {
-        AudioManager.Instance.PlayClick();
+        AudioManager.Instance?.PlayClick();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

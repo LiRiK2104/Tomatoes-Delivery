@@ -59,7 +59,7 @@ public class Magnet : MonoBehaviour
 
     public void PushLeft()
     {
-        AudioManager.Instance.PlaySound(SoundFX.push);
+        AudioManager.Instance?.PlaySound(SoundFX.push);
         StartCoroutine("StopMagneting");
         foreach (var item in _objectsInField)
         {
@@ -72,7 +72,7 @@ public class Magnet : MonoBehaviour
 
     public void PushRight()
     {
-        AudioManager.Instance.PlaySound(SoundFX.push);
+        AudioManager.Instance?.PlaySound(SoundFX.push);
         StartCoroutine("StopMagneting");
         foreach (var item in _objectsInField)
         {

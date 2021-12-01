@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenTutor()
     {
-        AudioManager.Instance.PlayClick();
+        AudioManager.Instance?.PlayClick();
         tutor.SetActive(true);
     }
 }

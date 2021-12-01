@@ -31,7 +31,7 @@ public class WheelsObserver : MonoBehaviour
 
     internal void Freeze()
     {
-        AudioManager.Instance.PlaySound(SoundFX.hold);
+        AudioManager.Instance?.PlaySound(SoundFX.hold);
         foreach (var wheel in Wheels)
         {
             Debug.Log("freezzee");
